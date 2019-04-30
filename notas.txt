@@ -1,0 +1,45 @@
+Criar pasta e entrar na pasta
+python -m venv myenv
+source myenv/Scripts/activate
+pip install django
+django-admin startproject projeto .
+code .
+python manage.py runserver
+python manage.py startapp app
+
+Ir no settings.py do projeto
+colocar 'app' que é o nome da pasta na seção INSTALLED_APPS
+
+Criar as pastas templates e static dentro da pasta app
+criar html dentro do templates
+
+Ir na views do app e colocar a função abaixo para carregar a pagina principal
+def home(request):
+    return render(request, 'main.html')
+
+Ir no urls do projeto e adicionar essa linha no urlpatterns
+from app import views 
+path('', views.home),
+
+Criar pasta css dentro da pasta static
+
+Para se referir ao css colocar 
+{% load staticfiles %} no html para que ele carregue os arquivos da pasta staticfiles
+E 
+Colocar um link de css com o href "{% static 'css/style.css' %}"
+SGBD - sistema gerenciador de bancos de dados
+
+Models - models.py no app
+
+(sempre que mexer ou migrar nos models)
+Quando criar os models dar um python manage.py makemigrations - mapeia alteracoes
+Depois python manage.py migrate - aplica as alteracoes
+
+python manage.py createsuperuser --> Usar o prompt de comando do windows
+rodar com runserver
+e ir no localhost:8000/admin colocar user e password
+
+Ir no admin.py do app colocar 
+
+from app.models import Autor, Livro
+
