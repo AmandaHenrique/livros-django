@@ -43,3 +43,6 @@ Ir no admin.py do app colocar
 
 from app.models import Autor, Livro
 
+admin.site.register(Autor)
+admin.site.register(Livro)
+
